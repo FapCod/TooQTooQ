@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ffddb41-c30a-492d-bbd9-f7b43b7403ab">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     mesero.`nombre` AS mesero_nombre,
+     mesero.`telefono` AS mesero_telefono,
+     mesero.`mail` AS mesero_mail,
+     mesero.`contraseña` AS mesero_contraseña,
+     mesero.`userName` AS mesero_userName,
+     mesero.`numeroMesero` AS mesero_numeroMesero
+FROM
+     `mesero` mesero]]>
+	</queryString>
+	<field name="mesero_nombre" class="java.lang.String"/>
+	<field name="mesero_telefono" class="java.lang.String"/>
+	<field name="mesero_mail" class="java.lang.String"/>
+	<field name="mesero_contraseña" class="java.lang.String"/>
+	<field name="mesero_userName" class="java.lang.String"/>
+	<field name="mesero_numeroMesero" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="206" y="0" width="104" height="45" uuid="5a305688-a451-4f49-9749-ac909534ad34"/>
+				<textElement>
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Meseros]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="412" y="14" width="100" height="20" uuid="c2e07453-a084-4949-884b-6cdb862b9037"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="4" splitType="Stretch">
+			<image>
+				<reportElement x="29" y="-80" width="92" height="80" uuid="36dbf537-78b2-48da-b5e7-85e4c4c04ba3"/>
+				<imageExpression><![CDATA["C:\\Users\\Frank\\Documents\\NetBeansProjects\\TooQTooQ\\src\\imagenes\\logoTOOQTOOQ.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="0da25a2e-8b28-4739-96ef-7a95afacd10e"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="0" width="85" height="20" uuid="d2ba2a37-67c2-446a-817e-08c951a5f6a4"/>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="71" height="20" uuid="aa71b498-c3d2-40e3-9ecc-ac44a97a8a19"/>
+				<text><![CDATA[E-mail]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="0" width="76" height="20" uuid="8764655d-2f10-4608-9a2f-bf5e744c272c"/>
+				<text><![CDATA[Contraseña]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="0" width="76" height="20" uuid="16d31d71-1b38-4561-90fd-d0dbc0b52fd2"/>
+				<text><![CDATA[Username]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="497" y="2" width="58" height="20" uuid="91eb1c31-9bb2-46ed-b782-3216f2f83a31"/>
+				<text><![CDATA[Nª Mesero]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="4877bfd4-9809-4a4f-8f82-143341a8fa78"/>
+				<textFieldExpression><![CDATA[$F{mesero_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="0" width="73" height="20" uuid="442d1a38-92eb-44b6-a8f9-a69a3980c94e"/>
+				<textFieldExpression><![CDATA[$F{mesero_telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="71" height="20" uuid="6b1ab6ba-1cc9-4498-b8e3-e6d8a3fab4a6"/>
+				<textFieldExpression><![CDATA[$F{mesero_mail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="0" width="74" height="20" uuid="156078a8-0eec-45d4-9b83-cf3374fd8804"/>
+				<textFieldExpression><![CDATA[$F{mesero_contraseña}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="0" width="76" height="20" uuid="87a6842b-acd0-4c3a-9489-31c3bb3b1283"/>
+				<textFieldExpression><![CDATA[$F{mesero_userName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="497" y="0" width="58" height="20" uuid="01a75253-f33f-46eb-9766-e1b6abb0673f"/>
+				<textFieldExpression><![CDATA[$F{mesero_numeroMesero}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="274" y="0" width="40" height="20" uuid="3aab032d-8c4c-4d00-a2ad-ca5defcbed9b"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="194" y="0" width="80" height="20" uuid="1c5b610a-56d3-4a26-9ed9-eb4105549c7a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="2" splitType="Stretch"/>
+	</summary>
+</jasperReport>

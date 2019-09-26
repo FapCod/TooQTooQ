@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="79f7cb90-15b3-45d8-90ac-a12535f201e9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     administrador.`nombre` AS administrador_nombre,
+     administrador.`telefono` AS administrador_telefono,
+     administrador.`mail` AS administrador_mail,
+     administrador.`contraseña` AS administrador_contraseña,
+     administrador.`username` AS administrador_username
+FROM
+     `administrador` administrador]]>
+	</queryString>
+	<field name="administrador_nombre" class="java.lang.String"/>
+	<field name="administrador_telefono" class="java.lang.String"/>
+	<field name="administrador_mail" class="java.lang.String"/>
+	<field name="administrador_contraseña" class="java.lang.String"/>
+	<field name="administrador_username" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="167" y="0" width="186" height="43" uuid="d9fbf072-2b0d-4361-b0b6-6f4fde110337"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Administrador(es)]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="432" y="12" width="100" height="20" uuid="04b680e4-d9ba-4401-9e4e-c0a1ff11bce8"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="23" y="0" width="110" height="67" uuid="5bbfc853-5ac0-41de-ae20-a246f2d094f4"/>
+				<imageExpression><![CDATA["C:\\Users\\Frank\\Documents\\NetBeansProjects\\TooQTooQ\\src\\imagenes\\logoTOOQTOOQ.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="4" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="f97b6601-dd3e-4da1-9a8e-eae5cdf2d3c6"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="0" width="100" height="20" uuid="e1826f54-b66d-4d35-b45d-d525424d4266"/>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="0" width="81" height="20" uuid="63bf6f7a-78b5-4c3c-a589-865bfccfab2a"/>
+				<text><![CDATA[E-mail]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="0" width="90" height="20" uuid="b48b5d7b-07a0-458c-86ed-589b1fe3a0f6"/>
+				<text><![CDATA[Contraseña]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="100" height="20" uuid="e0980db2-7ea6-45f8-a710-489173a930aa"/>
+				<text><![CDATA[Username]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="dc39b6c2-efd4-4936-ae6e-0329f37216f4"/>
+				<textFieldExpression><![CDATA[$F{administrador_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="80" height="20" uuid="cab2d6ac-ccb1-49fb-a45e-bf573559260d"/>
+				<textFieldExpression><![CDATA[$F{administrador_telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="238" y="0" width="81" height="20" uuid="801436da-ddbb-4ca4-8c94-0de417e72a7b"/>
+				<textFieldExpression><![CDATA[$F{administrador_mail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="0" width="90" height="20" uuid="a4ee43c6-4b67-430f-8e51-7299ddb250a6"/>
+				<textFieldExpression><![CDATA[$F{administrador_contraseña}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="0f5fb2e6-1803-4e6b-b200-42dbba73ce25"/>
+				<textFieldExpression><![CDATA[$F{administrador_username}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="199" y="0" width="80" height="20" uuid="034b10f7-211a-48c8-9535-0e97b22b37e0"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="279" y="0" width="40" height="20" uuid="dc212d83-ea6c-4e4f-8ff7-69b1d81b224e"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="3" splitType="Stretch"/>
+	</summary>
+</jasperReport>
